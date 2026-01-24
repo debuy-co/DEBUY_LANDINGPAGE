@@ -1,0 +1,78 @@
+.implementation {
+  background-color: #ffffff;
+}
+
+.implementation-header {
+  max-width: 720px;
+  margin-bottom: 4rem;
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0d6efd;
+    margin-bottom: 0.75rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.05rem;
+    color: #495057;
+    line-height: 1.6;
+  }
+}
+
+.implementation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.implementation-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: #6c757d;
+    line-height: 1.6;
+  }
+}
+
+.step-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+@media (max-width: 992px) {
+  .implementation-grid {
+    grid-template-columns: 1fr;
+  }
+}

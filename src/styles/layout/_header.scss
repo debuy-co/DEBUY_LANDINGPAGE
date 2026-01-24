@@ -1,0 +1,165 @@
+.header {
+  //position: sticky;
+  //top: 0;
+  //z-index: 1000;
+  position: relative;
+  background: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.header-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  height: 72px;
+}
+
+/* BRAND */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+  filter: brightness(0); // same color as text
+}
+
+.brand-img {
+  height: 58px;
+  width: auto;
+  display: block;
+  filter: brightness(0); // same color as text
+}
+
+.brand-name {
+  //margin-top: 1px; // optical alignment with logo
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #212529;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+
+  color: #495057;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    color: #0d6efd;
+  }
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: #495057;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    color: #0d6efd;
+  }
+}
+
+.nav-link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* CTA BUTTON */
+.nav-cta {
+  padding: 0.5rem 1.25rem;
+  background: #0d6efd;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    background: #0b5ed7;
+  }
+}
+
+/* BURGER */
+.burger {
+  display: none;
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* MOBILE MENU */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #ffffff;
+  border-top: 1px solid #e9ecef;
+
+  a,
+  button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #495057;
+    text-decoration: none;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .desktop-nav {
+    display: none; /* ✅ hide only nav */
+  }
+
+  .burger {
+    display: block; /* ✅ show burger */
+  }
+
+  .nav-cta {
+    display: none; /* ✅ hide cta */
+  }
+
+  .mobile-nav {
+    display: flex; /* ✅ show dropdown */
+  }
+}
