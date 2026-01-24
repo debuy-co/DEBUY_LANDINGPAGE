@@ -1,17 +1,17 @@
-@import "./layout/footer";
-@import "./layout/header";
+@use "./layout/footer";
+@use "./layout/header";
 
-@import "./base/reset";
-@import "./base/variables";
-@import "./base/typography";
-@import "./base/layout";
-@import "./base/buttons";
+@use "./base/reset";
+@use "./base/variables";
+@use "./base/typography";
+@use "./base/layout";
+@use "./base/buttons";
 
-@import "./pages/features-page";
-@import "./pages/about-page";
+@use "./pages/features-page";
+@use "./pages/about-page";
 
-@import "./sections/hero";
-@import "./sections/video-modal";
-@import "./sections/features";
-@import "./sections/implementation";
-@import "./sections/cta";
+@use "./sections/hero";
+@use "./sections/video-modal";
+@use "./sections/features";
+@use "./sections/implementation";
+@use "./sections/cta";
