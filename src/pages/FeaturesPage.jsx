@@ -36,7 +36,7 @@ export default function FeaturesPage() {
             </div>
 
             <div className="feature-media">
-              <img src="/illustrations/performance-dashboard.svg" alt="" />
+              <img src="illustrations/performance-dashboard.svg" alt="" />
             </div>
           </div>
         </section>
@@ -56,7 +56,7 @@ export default function FeaturesPage() {
             </div>
 
             <div className="feature-media">
-              <img src="/illustrations/supplier-analysis.svg" alt="" />
+              <img src="illustrations/supplier-analysis.svg" alt="" />
             </div>
           </div>
         </section>
@@ -75,7 +75,7 @@ export default function FeaturesPage() {
             </div>
 
             <div className="feature-media">
-              <img src="/illustrations/parts-analysis.svg" alt="" />
+              <img src="illustrations/parts-analysis.svg" alt="" />
             </div>
           </div>
         </section>
@@ -95,7 +95,7 @@ export default function FeaturesPage() {
             </div>
 
             <div className="feature-media">
-              <img src="/illustrations/material-trend.svg" alt="" />
+              <img src="illustrations/material-trend.svg" alt="" />
             </div>
           </div>
         </section>
@@ -114,7 +114,7 @@ export default function FeaturesPage() {
             </div>
 
             <div className="feature-media">
-              <img src="/illustrations/ai-commentary.svg" alt="" />
+              <img src="illustrations/ai-commentary.svg" alt="" />
             </div>
           </div>
         </section>

@@ -4,7 +4,7 @@ export default function Hero() {
       {/* BACKGROUND VIDEO */}
       <video
         className="hero-video"
-        src="/videos/hero-video-short-520p.mp4"
+        src="videos/hero-video-short-520p.mp4"
         autoPlay
         muted
         loop

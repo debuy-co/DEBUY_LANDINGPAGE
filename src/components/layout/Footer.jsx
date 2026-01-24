@@ -5,7 +5,7 @@ export default function Footer() {
         {/* TOP LOGO */}
         <div className="footer-top">
           <img
-            src="/images/white_logo_transparent_background.png"
+            src="images/white_logo_transparent_background.png"
             alt="DEBUY procurement analytics platform"
             className="footer-logo"
           />
@@ -30,7 +30,7 @@ export default function Footer() {
               aria-label="DEBUY on LinkedIn"
             >
               <img
-                src="/images/linkedin-white.svg"
+                src="images/linkedin-white.svg"
                 alt="LinkedIn"
                 className="linkedin-icon"
               />
@@ -40,7 +40,7 @@ export default function Footer() {
           {/* RIGHT */}
           <nav className="footer-nav">
             <a href="#features">Features</a>
-            <a href="/about">About</a>
+            <a href="#about">About</a>
             <a href="#contact">Contact</a>
           </nav>
         </div>

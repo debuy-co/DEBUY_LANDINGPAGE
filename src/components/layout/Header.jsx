@@ -23,14 +23,14 @@ export default function Header() {
         <div className="brand">
           <a href="/" className="logo">
             <img
-              src="/images/base_icon_transparent_background.png"
+              src="images/base_icon_transparent_background.png"
               alt="DEBUY procurement analytics platform"
               className="logo-img"
             />
           </a>
           <a href="/" className="logo">
             <img
-              src="/images/base_text-logoname_transparent_background.png"
+              src="images/base_text-logoname_transparent_background.png"
               alt="DEBUY procurement analytics platform"
               className="brand-img"
             />

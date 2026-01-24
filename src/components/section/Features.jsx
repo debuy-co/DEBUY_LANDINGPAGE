@@ -68,7 +68,7 @@ export default function Features() {
         </div>
 
         <div className="features-cta">
-          <a href="/features" className="features-cta-link">
+          <a href="#features" className="features-cta-link">
             More about our features →
           </a>
         </div>

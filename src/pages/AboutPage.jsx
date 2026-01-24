@@ -25,7 +25,7 @@ export default function AboutPage() {
             {/* LEFT: IMAGE */}
             <div className="about-media">
               <img
-                src="/images/about-picture.jpg"
+                src="images/about-picture.jpg"
                 alt="Purchasing analytics and decision making"
               />
             </div>
