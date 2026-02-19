@@ -1,3 +1,3 @@
 export default function LogoPage() {
-  return <img src="/images/white_logo_transparent_background.png" alt="logo" />;
+  return <img src="/images/base_logo_white_background.png" alt="logo" />;
 }
