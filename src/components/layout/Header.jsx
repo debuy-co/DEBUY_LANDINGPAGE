@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
 
   const scrollToSection = (id) => {
     setOpen(false);
 
-    if (location.pathname === "/") {
+    if (router.pathname === "/") {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     } else {
-      navigate("/", { state: { scrollTo: id } });
+      router.push("/", { state: { scrollTo: id } });
     }
   };
 
@@ -53,7 +53,7 @@ export default function Header() {
             Implementation
           </button>
 
-          <Link to="/about" className="nav-item">
+          <Link href="/about" className="nav-item">
             About
           </Link>
 
@@ -84,13 +84,13 @@ export default function Header() {
       {/* MOBILE MENU PANEL */}
       {open && (
         <div className="mobile-nav">
-          <Link to="/features" onClick={() => setOpen(false)}>
+          <Link href="/features" onClick={() => setOpen(false)}>
             Features
           </Link>
           <button onClick={() => scrollToSection("implementation")}>
             Implementation
           </button>
-          <Link to="/about" onClick={() => setOpen(false)}>
+          <Link href="/about" onClick={() => setOpen(false)}>
             About
           </Link>
           <button onClick={() => scrollToSection("contact")}>Contact</button>

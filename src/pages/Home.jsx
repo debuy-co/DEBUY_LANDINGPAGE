@@ -5,27 +5,26 @@ import CTA from "../components/section/CTA";
 import Footer from "../components/layout/Footer";
 import Implementation from "../components/section/Implementation";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useRouter } from "next/router";
 
 export default function Home() {
-  const location = useLocation();
+  const router = useRouter();
 
   useEffect(() => {
-    if (location.state?.scrollTo) {
-      const el = document.getElementById(location.state.scrollTo);
+    const scrollTarget = router.query.scrollTo;
+    if (scrollTarget) {
+      const el = document.getElementById(scrollTarget);
       el?.scrollIntoView({ behavior: "smooth" });
     }
-  }, [location]);
+  }, [router.query]);
 
   return (
     <>
       <Header />
-
       <Hero />
       <Features />
       <Implementation />
       <CTA />
-
       <Footer />
     </>
   );
