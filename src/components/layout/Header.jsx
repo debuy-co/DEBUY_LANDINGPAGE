@@ -76,8 +76,8 @@ export default function Header() {
         </button>
 
         {/* DESKTOP ONLY CTA */}
-        <a href="#contact" className="nav-cta">
-          Get Started
+        <a href="https://app.debuy.co" className="nav-cta">
+          Log in
         </a>
       </div>
 
