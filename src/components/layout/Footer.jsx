@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -37,12 +39,24 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* RIGHT */}
-          <nav className="footer-nav">
-            <a href="#features">Features</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-          </nav>
+          {/* RIGHT — due colonne */}
+          <div className="footer-nav-group">
+            {/* Colonna 1 */}
+            <nav className="footer-nav">
+              <span className="footer-nav-label">Company</span>
+              <a href="#features">Features</a>
+              <Link href="/about">About</Link>
+              <a href="#contact">Contact</a>
+            </nav>
+
+            {/* Colonna 2 */}
+            <nav className="footer-nav">
+              <span className="footer-nav-label">Legal</span>
+              <Link href="/terms">Terms and Conditions</Link>
+              <Link href="/privacy">Privacy Policy</Link>
+              <Link href="/cookie">Cookie Policy</Link>
+            </nav>
+          </div>
         </div>
       </div>
     </footer>

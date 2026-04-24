@@ -91,6 +91,14 @@ export default function FinalCTA() {
               <button type="submit" className="btn btn-primary btn-block">
                 Request a demo
               </button>
+              <label className="form-checkbox">
+                <input type="checkbox" required />I confirm that I have read the{" "}
+                <a href="/privacy" target="_blank" rel="noopener noreferrer">
+                  Privacy Policy
+                </a>{" "}
+                and consent to the processing of my personal data to receive a
+                response.
+              </label>
             </form>
           )}
         </div>

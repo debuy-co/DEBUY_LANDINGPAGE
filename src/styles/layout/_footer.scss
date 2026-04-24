@@ -18,6 +18,31 @@
   padding: 2.5rem 0;
 }
 
+.footer-legal {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-top: 0;
+
+  .legal-link {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    text-decoration: none;
+    transition:
+      border-color 0.2s,
+      color 0.2s;
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.7);
+      color: #ffffff;
+    }
+  }
+}
+
 .footer-inner {
   display: grid;
   grid-template-rows: 2;
@@ -27,9 +52,8 @@
 
 /* ALIGN EACH COLUMN */
 .footer-brand {
-  justify-self: start;
   display: flex;
-  align-items: center;
+  gap: 8px;
 }
 
 .footer-social {
@@ -41,10 +65,25 @@
   color: #adb5bd;
 }
 
-.footer-nav {
-  justify-self: end;
+.footer-nav-group {
   display: flex;
-  gap: 1.5rem;
+  justify-self: right;
+  gap: 38px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-nav-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 4px;
 }
 
 /* SOCIAL ICON */
@@ -96,7 +135,7 @@
 
   .footer-brand,
   .footer-social,
-  .footer-nav {
+  .footer-nav-group {
     justify-self: center;
   }
 }
