@@ -9,10 +9,16 @@
 // ─────────────────────────────────────────
 // Il tuo _app.js attuale — corretto così com'è
 // ─────────────────────────────────────────
+import CookieBanner from "../src/components/Cookiebanner";
 import "../src/styles/main.scss"; // ← CSS globale caricato su TUTTE le pagine
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />
+      <CookieBanner />
+    </>
+  );
   // Component = la pagina corrente (index.js, features.js, about.js...)
   // pageProps = eventuali dati passati alla pagina
 }

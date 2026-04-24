@@ -1,0 +1,98 @@
+// ─── Cookie Banner ────────────────────────────────────────────────────────────
+
+.cookie-banner {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 760px;
+  z-index: 9998;
+  animation: slideUp 0.3s ease;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 14px 20px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+
+    p {
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+
+  &__icon {
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  &__link {
+    color: #1a56db;
+    text-decoration: underline;
+
+    &:hover {
+      color: #1e40af;
+    }
+  }
+
+  &__btn {
+    flex-shrink: 0;
+    padding: 8px 20px;
+    background: #1a56db;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s;
+
+    &:hover {
+      background: #1e40af;
+    }
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (max-width: 560px) {
+  .cookie-banner {
+    bottom: 16px;
+
+    &__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

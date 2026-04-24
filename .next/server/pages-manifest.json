@@ -2,8 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/privacy": "pages/privacy.js",
-  "/about": "pages/about.js",
-  "/cookie": "pages/cookie.js"
+  "/cookie": "pages/cookie.js",
+  "/": "pages/index.js"
 }
