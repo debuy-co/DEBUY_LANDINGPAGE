@@ -1,7 +1,13 @@
 {
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/cookie": "pages/cookie.js",
-  "/": "pages/index.js"
+  "/_app": "pages/_app.js",
+  "/cookie": "pages/cookie.html",
+  "/features": "pages/features.html",
+  "/_error": "pages/_error.js",
+  "/logo": "pages/logo.html",
+  "/": "pages/index.html",
+  "/terms": "pages/terms.html",
+  "/about": "pages/about.html",
+  "/privacy": "pages/privacy.html",
+  "/404": "pages/404.html"
 }
