@@ -1,0 +1,321 @@
+// ─── tokens (aligned with features-dark palette) ──────────────────────────────
+$bg: #0b1220;
+$surface: #111827;
+$border: rgba(255, 255, 255, 0.07);
+$accent: #0d6efd; // same blue used in .features-cta-link
+$accent-muted: rgba(13, 110, 253, 0.12);
+$accent-light: lighten($accent, 22%);
+$text-primary: #ffffff;
+$text-muted: #adb5bd; // same as features .section-header p
+$text-hint: #9ca3af; // same as features .feature-card p
+$text-dim: #6b7280;
+$error: #e05252;
+
+$radius: 8px; // same as .feature-card
+$radius-lg: 12px;
+$font:
+  "Inter",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  sans-serif;
+
+// ─── page shell ───────────────────────────────────────────────────────────────
+.digest-page {
+  background-color: $bg; // identical to .features-dark
+  color: $text-primary;
+  font-family: $font;
+  -webkit-font-smoothing: antialiased;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// ─── nav ──────────────────────────────────────────────────────────────────────
+.digest-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 18px 36px;
+  background: rgba($bg, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid $border;
+}
+
+.digest-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: $text-primary;
+  letter-spacing: -0.2px;
+
+  &__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: $accent;
+    flex-shrink: 0;
+  }
+}
+
+// ─── two-column layout (mirrors final-cta-grid) ───────────────────────────────
+.digest-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+// ─── left copy ────────────────────────────────────────────────────────────────
+.digest-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.digest-badge {
+  display: inline-block;
+  background: $accent-muted;
+  border: 1px solid rgba($accent, 0.3);
+  border-radius: 100px;
+  padding: 4px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: $accent-light;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+
+.digest-heading {
+  font-size: 2.25rem; // matches .features-dark h2
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.5px;
+  color: $text-primary;
+  margin-bottom: 1rem;
+
+  em {
+    font-style: normal;
+    color: $accent;
+  }
+}
+
+.digest-sub {
+  font-size: 1.05rem; // matches .section-header p
+  color: $text-muted;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.digest-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+
+  li {
+    font-size: 0.95rem;
+    color: $text-hint;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    &::before {
+      content: "✓";
+      color: $accent;
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// ─── form card (mirrors .feature-card surface) ────────────────────────────────
+.digest-card {
+  background: $surface; // identical to .feature-card
+  border-radius: $radius;
+  padding: 2.5rem 2rem;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  // reuse existing .form-group from CTA.scss — only override what differs
+  .form-group {
+    margin-bottom: 1rem;
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: $text-dim;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid $border;
+      border-radius: $radius;
+      padding: 0.75rem 0.875rem;
+      color: $text-primary;
+      font-size: 0.95rem;
+      font-family: $font;
+      outline: none;
+      transition: border-color 0.18s;
+
+      &::placeholder {
+        color: $text-dim;
+      }
+      &:focus {
+        border-color: $accent;
+      }
+    }
+  }
+}
+
+// ─── error ────────────────────────────────────────────────────────────────────
+.digest-error {
+  font-size: 0.8rem;
+  color: $error;
+  margin-bottom: 0.75rem;
+}
+
+// ─── button — reuses .btn .btn-primary .btn-block from your global styles ──────
+// only scoped overrides needed inside the card
+.digest-card {
+  .btn-block {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}
+
+// ─── spinner ──────────────────────────────────────────────────────────────────
+@keyframes digest-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.digest-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: digest-spin 0.7s linear infinite;
+}
+
+// ─── privacy checkbox — reuses .form-checkbox from CTA ───────────────────────
+// no overrides needed; .form-checkbox already defined globally
+
+// ─── success ──────────────────────────────────────────────────────────────────
+@keyframes digest-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.digest-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  animation: digest-fade-up 0.35s ease both;
+
+  h3 {
+    font-size: 1.25rem; // matches .feature-card h3
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: $text-hint;
+    line-height: 1.6;
+
+    strong {
+      color: $accent-light;
+      font-weight: 600;
+    }
+  }
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: $accent-muted;
+    border: 1px solid rgba($accent, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: $accent-light;
+  }
+}
+
+// ─── footer ───────────────────────────────────────────────────────────────────
+.digest-footer {
+  margin-top: auto;
+  padding: 2rem 1.25rem;
+  font-size: 0.75rem;
+  color: $text-dim;
+  text-align: center;
+}
+
+// ─── responsive ───────────────────────────────────────────────────────────────
+@media (max-width: 992px) {
+  .digest-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 100px;
+  }
+
+  .digest-copy {
+    text-align: center;
+  }
+
+  .digest-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .digest-bullets li {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .digest-nav {
+    padding: 16px 20px;
+  }
+  .digest-card {
+    padding: 1.5rem 1.25rem;
+  }
+}
