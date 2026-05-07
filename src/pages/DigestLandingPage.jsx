@@ -61,19 +61,19 @@ export default function DigestLanding() {
         <div className="container digest-inner">
           {/* LEFT */}
           <div className="digest-copy">
-            <span className="digest-badge">Daily AI Digest</span>
+            <span className="digest-badge">Daily Digest</span>
             <h1 className="digest-heading">
               Procurement intel,
               <br />
               every <em>morning</em>.
             </h1>
             <p className="digest-sub">
-              One email before 7&nbsp;AM. Commodity prices, supplier risks and
-              market shifts — distilled so you can act on them today.
+              One email before 7&nbsp;AM, CET time. Commodity prices, supplier
+              risks and market shifts — distilled so you can act on them today.
             </p>
             <ul className="digest-bullets">
-              <li>AI-curated, 5-min read</li>
-              <li>Weekdays at 7 AM sharp</li>
+              <li>5-min read</li>
+              <li>Weekdays at 7 AM sharp, CET time</li>
               <li>No spam, ever</li>
               <li>Free, unsubscribe anytime</li>
             </ul>
