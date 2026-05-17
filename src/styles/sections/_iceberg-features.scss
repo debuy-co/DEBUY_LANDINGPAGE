@@ -1,0 +1,330 @@
+// ─── tokens (same as features-dark) ──────────────────────────────────────────
+$bg: #0b1220;
+$surface: #111827;
+$accent: #0d6efd;
+$text-white: #ffffff;
+$text-muted: #adb5bd;
+$text-dim: #9ca3af;
+
+// ─── section ─────────────────────────────────────────────────────────────────
+.iceberg-section {
+  background-color: $bg;
+  color: $text-white;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  .section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 4rem;
+
+    h2 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #adb5bd;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+// ─── blueprint grid ──────────────────────────────────────────────────────────
+.iceberg-grid-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+// ─── top label ───────────────────────────────────────────────────────────────
+.iceberg-top-label {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: $accent;
+  opacity: 0.4;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.iceberg-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+// ─── two-column layout — iceberg now larger, panel narrower ──────────────────
+.iceberg-grid {
+  display: grid;
+  // iceberg column expanded from 380px → 560px
+  // right panel becomes proportionally narrower
+  grid-template-columns: 560px minmax(0, 1fr);
+  gap: 4rem;
+  align-items: start;
+}
+
+// ─── left col — iceberg visual ───────────────────────────────────────────────
+.iceberg-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  svg {
+    width: 100%;
+    // bumped from 360px → 520px
+    max-width: 520px;
+    height: auto;
+    display: block;
+  }
+}
+
+.iceberg-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.iceberg-dot {
+  height: 7px;
+  width: 7px;
+  border-radius: 4px;
+  border: none;
+  background: rgba($accent, 0.18);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+
+  &--active {
+    width: 24px;
+    background: $accent;
+  }
+}
+
+// ─── right col — panel (compacted) ───────────────────────────────────────────
+@keyframes iceberg-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.iceberg-panel {
+  animation: iceberg-fade-up 0.42s ease both;
+  padding-top: 1.5rem; // align with iceberg's first visible label
+  max-width: 460px; // cap width so it doesn't stretch
+}
+
+.iceberg-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.68rem; // slightly smaller
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $accent;
+  margin-bottom: 0.75rem;
+
+  &__line {
+    display: inline-block;
+    width: 18px;
+    height: 1px;
+    background: $accent;
+    opacity: 0.55;
+    flex-shrink: 0;
+  }
+}
+
+.iceberg-heading {
+  // reduced from 2.25rem → 1.75rem
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.875rem;
+  color: $text-white;
+  letter-spacing: -0.01em;
+}
+
+.iceberg-desc {
+  color: $text-muted;
+  // reduced from 1.05rem → 0.95rem
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+  max-width: 400px;
+}
+
+// ─── feature cards (more compact) ────────────────────────────────────────────
+.iceberg-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-bottom: 0;
+}
+
+.iceberg-feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  // tighter padding
+  padding: 0.75rem 1rem;
+  border-left: 2px solid rgba($accent, 0.3);
+  animation: iceberg-fade-up 0.42s ease both;
+
+  &.feature-card {
+    padding: 0.75rem 1rem;
+  }
+
+  &:hover {
+    border-left-color: $accent;
+    transform: translateY(-2px);
+  }
+
+  // number badge replacing the old emoji/icon slot
+  .feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: $accent;
+    background: rgba($accent, 0.1);
+    border: 1px solid rgba($accent, 0.25);
+    border-radius: 4px;
+    font-family:
+      "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+
+    h4 {
+      // reduced from 1rem → 0.9rem
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+      color: $text-white;
+      line-height: 1.3;
+    }
+
+    p {
+      color: $text-dim;
+      // reduced from 0.875rem → 0.8rem
+      font-size: 0.8rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+}
+
+// ─── nav buttons ─────────────────────────────────────────────────────────────
+.iceberg-nav {
+  display: flex;
+  gap: 0.625rem;
+  margin-top: 1.5rem;
+}
+
+.iceberg-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: $text-muted;
+  padding: 0.45rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    border-color 0.2s,
+    background 0.2s;
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: $text-white;
+  }
+
+  &--primary {
+    background: rgba($accent, 0.12);
+    border-color: rgba($accent, 0.38);
+    color: #6ea8fe;
+
+    &:not(:disabled):hover {
+      background: rgba($accent, 0.22);
+      border-color: $accent;
+      color: $text-white;
+    }
+  }
+}
+
+// ─── responsive ──────────────────────────────────────────────────────────────
+@media (max-width: 1100px) {
+  .iceberg-grid {
+    grid-template-columns: 460px minmax(0, 1fr);
+    gap: 3rem;
+  }
+
+  .iceberg-visual svg {
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 900px) {
+  .iceberg-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .iceberg-visual {
+    margin: 0 auto;
+
+    svg {
+      max-width: 380px;
+    }
+  }
+
+  .iceberg-panel {
+    max-width: 100%;
+    padding-top: 0;
+  }
+
+  .iceberg-nav {
+    justify-content: center;
+  }
+
+  .iceberg-feature-card {
+    text-align: left;
+  }
+}

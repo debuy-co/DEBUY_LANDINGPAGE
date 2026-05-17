@@ -6,6 +6,7 @@ import Footer from "../components/layout/Footer";
 import Implementation from "../components/section/Implementation";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import IcebergFeatures from "../components/section/IcebergFeatures";
 
 export default function Home() {
   const router = useRouter();
@@ -22,7 +23,7 @@ export default function Home() {
     <>
       <Header />
       <Hero />
-      <Features />
+      <IcebergFeatures />
       <Implementation />
       <CTA />
       <Footer />
