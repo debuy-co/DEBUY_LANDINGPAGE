@@ -5,10 +5,10 @@ export default function DraftHomePage() {
   return (
     <>
       <Head>
-        <title>DEBUY | Send your supplier&apos;s offer. Get a verdict you can defend.</title>
+        <title>DEBUY | Know what you should pay. Know where every order stands.</title>
         <meta
           name="description"
-          content="DEBUY decomposes every price movement into material, FX and volume drivers, benchmarks it against market indices, and hands you the negotiation brief. Forward a supplier offer, get the verdict in minutes."
+          content="DEBUY covers purchasing from the first quote to the final delivery: Quote Check gives a defensible verdict on every offer, Intelligence finds recoverable spend, Order Watch tracks every order."
         />
         <meta name="robots" content="noindex, nofollow" />
       </Head>
