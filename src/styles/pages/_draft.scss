@@ -1,0 +1,590 @@
+$accent: #0d6efd;
+$accent-hover: #0b5ed7;
+$navy: #020617;
+$navy-soft: #0d1f3c;
+$ink: #212529;
+$muted: #495057;
+$line: rgba(13, 110, 253, 0.16);
+
+/* ── Hero draft ─────────────────────────────── */
+.hero--draft {
+  .hero-draft-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 520px) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: center;
+  }
+}
+
+.hero-actions--stack {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.hero-hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #c7d2fe;
+}
+
+.hero-trustbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 1rem 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.8rem;
+  color: #e5e7eb;
+
+  li::before {
+    content: "✓";
+    color: $accent;
+    margin-right: 0.4rem;
+    font-weight: 700;
+  }
+}
+
+/* ── Email capture ──────────────────────────── */
+.capture-form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  input {
+    flex: 1 1 180px;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 0.95rem;
+
+    &::placeholder {
+      color: #c7d2fe;
+    }
+
+    &:focus {
+      outline: 2px solid $accent;
+      outline-offset: 1px;
+    }
+  }
+
+  .btn {
+    flex: 0 0 auto;
+  }
+}
+
+.final-cta .capture-form input,
+.product-hero .capture-form input {
+  background: #fff;
+  border: 1px solid #ced4da;
+  color: $ink;
+
+  &::placeholder {
+    color: #6c757d;
+  }
+}
+
+.capture-success {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  background: rgba(13, 110, 253, 0.12);
+  border: 1px solid rgba(13, 110, 253, 0.4);
+  color: inherit;
+  line-height: 1.5;
+}
+
+.hero .capture-success {
+  color: #fff;
+}
+
+.form-note {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: $muted;
+
+  a {
+    color: $accent;
+  }
+}
+
+/* ── Verdict email mockup ───────────────────── */
+.verdict-card {
+  background: #fff;
+  color: $ink;
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 24px 60px rgba(2, 6, 23, 0.45);
+  max-width: 460px;
+  justify-self: end;
+  width: 100%;
+}
+
+.verdict-card__head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.verdict-card__from {
+  font-weight: 600;
+  color: $accent;
+}
+
+.verdict-card__subject {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.verdict-card__score {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.verdict-card__badge {
+  align-self: flex-start;
+  background: rgba(220, 53, 69, 0.12);
+  color: #b02a37;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+.verdict-card__price {
+  font-size: 0.85rem;
+  color: $muted;
+}
+
+.verdict-card__range {
+  margin-bottom: 1rem;
+}
+
+.verdict-card__range-track {
+  position: relative;
+  height: 8px;
+  border-radius: 4px;
+  background: #e9ecef;
+}
+
+.verdict-card__range-zone {
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  top: 0;
+  bottom: 0;
+  border-radius: 4px;
+  background: rgba(13, 110, 253, 0.35);
+}
+
+.verdict-card__range-pin {
+  position: absolute;
+  left: 78%;
+  top: -4px;
+  width: 4px;
+  height: 16px;
+  border-radius: 2px;
+  background: #b02a37;
+}
+
+.verdict-card__range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #6c757d;
+  margin-top: 0.35rem;
+}
+
+.verdict-card__drivers {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 0;
+    border-bottom: 1px dashed #e9ecef;
+    font-size: 0.88rem;
+  }
+
+  li.verdict-card__driver--gap {
+    color: #b02a37;
+    font-weight: 600;
+    border-bottom: none;
+  }
+}
+
+.verdict-card__talk {
+  background: $navy-soft;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+
+  p {
+    color: #e5e7eb;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin: 0.25rem 0 0;
+    line-height: 1.5;
+  }
+}
+
+.verdict-card__talk-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6ea8fe;
+  font-weight: 700;
+}
+
+/* ── Proof bar ──────────────────────────────── */
+.proofbar {
+  background: $navy;
+  border-top: 1px solid rgba(13, 110, 253, 0.25);
+  padding: 2.5rem 0;
+}
+
+.proofbar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.proofbar-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.proofbar-label {
+  font-size: 0.9rem;
+  color: #adb5bd;
+}
+
+/* ── Products ───────────────────────────────── */
+.products {
+  background:
+    linear-gradient(rgba(248, 249, 250, 0.97), rgba(248, 249, 250, 0.97)),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 31px,
+      rgba(13, 110, 253, 0.05) 32px
+    );
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 16px 40px rgba(2, 6, 23, 0.12);
+    transform: translateY(-3px);
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin: 0.5rem 0 0;
+  }
+}
+
+.product-card__claim {
+  font-weight: 600;
+  color: $accent;
+  margin: 0;
+}
+
+.product-card__cta {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-weight: 600;
+  color: $accent;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* ── Why DEBUY ──────────────────────────────── */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.why-card {
+  background: #fff;
+  border: 1px solid $line;
+  border-left: 3px solid $accent;
+  border-radius: 8px;
+  padding: 1.5rem;
+
+  h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.why-card__them {
+  color: $muted;
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  text-decoration-color: rgba(220, 53, 69, 0.6);
+}
+
+.why-card__us {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ── FAQ ────────────────────────────────────── */
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border: 1px solid $line;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  background: #fff;
+}
+
+.faq-q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background: none;
+  border: none;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: $ink;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-a {
+  padding: 0 1.25rem 1rem;
+  margin: 0;
+  color: $muted;
+  line-height: 1.6;
+}
+
+/* ── Product pages ──────────────────────────── */
+.product-hero {
+  background: linear-gradient(180deg, $navy 0%, $navy-soft 100%);
+  color: #fff;
+  padding: 9rem 0 5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: #adb5bd;
+  margin-bottom: 2rem;
+
+  a {
+    color: #6ea8fe;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.product-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.product-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem;
+}
+
+.product-hero__sub {
+  font-size: 1.1rem;
+  color: #e5e7eb;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.product-hero .hero-hint {
+  margin-top: 0.5rem;
+}
+
+.product-hero__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.section--alt {
+  background: #f8f9fa;
+}
+
+/* waterfall visual (platform) */
+.waterfall-card {
+  background: #fff;
+  color: $ink;
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  max-width: 440px;
+
+  .eyebrow {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+
+.waterfall-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 44px;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.waterfall-label {
+  font-size: 0.8rem;
+  color: $muted;
+}
+
+.waterfall-track {
+  height: 10px;
+  background: #e9ecef;
+  border-radius: 5px;
+}
+
+.waterfall-bar {
+  height: 100%;
+  border-radius: 5px;
+  background: $accent;
+}
+
+.waterfall-bar.bar--gap {
+  background: #b02a37;
+}
+
+.waterfall-pct {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* order watch timeline visual */
+.orderwatch-card {
+  background: #fff;
+  color: $ink;
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  max-width: 440px;
+}
+
+.orderwatch-timeline {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0 0.6rem 1.5rem;
+  font-size: 0.9rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e9ecef;
+  }
+
+  &:first-child::before {
+    top: 50%;
+  }
+
+  &:last-child::before {
+    bottom: 50%;
+  }
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ced4da;
+}
+
+.timeline-item--done .timeline-dot {
+  background: $accent;
+}
+
+.timeline-item--current .timeline-dot {
+  background: #fff;
+  border: 3px solid $accent;
+}
+
+.timeline-flag {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #b02a37;
+  background: rgba(220, 53, 69, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 992px) {
+  .hero--draft .hero-draft-grid,
+  .product-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .verdict-card {
+    justify-self: start;
+  }
+
+  .proofbar-grid,
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-hero {
+    padding: 7rem 0 4rem;
+  }
+}
