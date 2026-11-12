@@ -47,6 +47,24 @@ $line: rgba(13, 110, 253, 0.16);
   }
 }
 
+/* ── Hero rotating word ─────────────────────── */
+.hero-rotator {
+  display: inline-block;
+  color: #6ea8fe;
+  animation: word-in 0.4s ease;
+}
+
+@keyframes word-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* ── Email capture ──────────────────────────── */
 .capture-form {
   display: flex;
@@ -274,13 +292,31 @@ $line: rgba(13, 110, 253, 0.16);
 /* ── Products ───────────────────────────────── */
 .products {
   background:
-    linear-gradient(rgba(248, 249, 250, 0.97), rgba(248, 249, 250, 0.97)),
+    linear-gradient(rgba(2, 6, 23, 0.94), rgba(2, 6, 23, 0.94)),
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 31px,
-      rgba(13, 110, 253, 0.05) 32px
-    );
+      rgba(13, 110, 253, 0.09) 32px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 31px,
+      rgba(13, 110, 253, 0.09) 32px
+    ),
+    linear-gradient(180deg, #020617 0%, #0d1f3c 100%);
+  color: #fff;
+
+  .section-header {
+    h2 {
+      color: #fff;
+    }
+
+    p {
+      color: #adb5bd;
+    }
+  }
 }
 
 .product-card {
