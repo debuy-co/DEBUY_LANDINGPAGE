@@ -1,4 +1,24 @@
+import { useEffect, useState } from "react";
 import EmailCapture from "./EmailCapture";
+
+const ROTATING_WORDS = ["Better", "Faster", "Simpler", "Easier", "Smarter"];
+
+function RotatingWord() {
+  const [idx, setIdx] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      setIdx((i) => (i + 1) % ROTATING_WORDS.length);
+    }, 2200);
+    return () => clearInterval(t);
+  }, []);
+
+  return (
+    <span className="hero-rotator" key={idx}>
+      {ROTATING_WORDS[idx]}.
+    </span>
+  );
+}
 
 export default function HeroVerdict() {
   return (
@@ -18,13 +38,14 @@ export default function HeroVerdict() {
       <div className="container hero-content">
         <div className="hero-draft-grid">
           <div className="hero-card">
-            <h1>Send your supplier&apos;s offer. Get a verdict you can defend.</h1>
+            <h1>
+              Purchase, <RotatingWord />
+            </h1>
 
             <p>
-              DEBUY decomposes every price movement into material, FX and
-              volume drivers, benchmarks it against market indices, and hands
-              you the negotiation brief. No black box: every assumption is
-              yours to check and change.
+              DEBUY selects the 3 key problems of the daily life of a
+              purchasing expert: is my offer competitive? Are supplier price
+              movements reasonable? Are my orders on time?
             </p>
 
             <div className="hero-actions hero-actions--stack">
