@@ -7,17 +7,10 @@
 @use "./base/layout";
 @use "./base/buttons";
 
-@use "./pages/features-page";
 @use "./pages/about-page";
 @use "./pages/terms";
-@use "./pages/digest-landing";
-@use "./pages/draft";
+@use "./pages/landing";
 
-@use "./sections/hero";
-@use "./sections/video-modal";
-@use "./sections/features";
-@use "./sections/iceberg-features";
-@use "./sections/implementation";
 @use "./sections/cta";
 
 @use "./cookiebanner";

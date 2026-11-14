@@ -1,7 +1,7 @@
 import Head from "next/head";
-import DraftQuoteCheck from "../../src/pages/DraftQuoteCheck";
+import QuoteCheckPage from "../src/pages/QuoteCheckPage";
 
-export default function DraftQuoteCheckPage() {
+export default function QuoteCheckPagePage() {
   return (
     <>
       <Head>
@@ -10,9 +10,8 @@ export default function DraftQuoteCheckPage() {
           name="description"
           content="Forward a supplier offer and get a defensible verdict in minutes: driver breakdown, expected range and a negotiation talk track. No integration required."
         />
-        <meta name="robots" content="noindex, nofollow" />
       </Head>
-      <DraftQuoteCheck />
+      <QuoteCheckPage />
     </>
   );
 }
