@@ -21,15 +21,15 @@ export default function DraftHeader() {
         <div className="brand">
           <a href="/draft" className="logo">
             <img
-              src="images/base_icon_transparent_background.png"
-              alt="DEBUY procurement analytics platform"
+              src="/images/base_icon_transparent_background.png"
+              alt="DEBUY | Negotiation intelligence for European manufacturers"
               className="logo-img"
             />
           </a>
           <a href="/draft" className="logo">
             <img
-              src="images/base_text-logoname_transparent_background.png"
-              alt="DEBUY procurement analytics platform"
+              src="/images/base_text-logoname_transparent_background.png"
+              alt="DEBUY | Negotiation intelligence for European manufacturers"
               className="brand-img"
             />
           </a>
@@ -45,9 +45,9 @@ export default function DraftHeader() {
           >
             How it works
           </button>
-          <button className="nav-item" onClick={() => scrollToSection("about")}>
+          <Link href="/about" className="nav-item">
             About
-          </button>
+          </Link>
         </nav>
 
         <button
@@ -70,7 +70,7 @@ export default function DraftHeader() {
           <button onClick={() => scrollToSection("how-it-works")}>
             How it works
           </button>
-          <button onClick={() => scrollToSection("about")}>About</button>
+          <Link href="/about" onClick={() => setOpen(false)}>About</Link>
           <Link href="/draft/quote-check" onClick={() => setOpen(false)}>
             Quote Check
           </Link>

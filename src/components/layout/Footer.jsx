@@ -7,8 +7,8 @@ export default function Footer() {
         {/* TOP LOGO */}
         <div className="footer-top">
           <img
-            src="images/white_logo_transparent_background.png"
-            alt="DEBUY procurement analytics platform"
+            src="/images/white_logo_transparent_background.png"
+            alt="DEBUY | Negotiation intelligence for European manufacturers"
             className="footer-logo"
           />
         </div>
@@ -32,7 +32,7 @@ export default function Footer() {
               aria-label="DEBUY on LinkedIn"
             >
               <img
-                src="images/linkedin-white.svg"
+                src="/images/linkedin-white.svg"
                 alt="LinkedIn"
                 className="linkedin-icon"
               />
