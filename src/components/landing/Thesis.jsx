@@ -1,19 +1,19 @@
+import { useLang } from "./i18n";
+
 export default function Thesis() {
+  const { t } = useLang();
+
   return (
     <section className="thesis section" id="about">
       <div className="container">
         <div className="section-header">
-          <span className="eyebrow">A better way to buy</span>
+          <span className="eyebrow">{t.thesis.eyebrow}</span>
           <h2>
-            From purchasing data
+            {t.thesis.titleA}
             <br />
-            to <em>negotiation leverage.</em>
+            {t.thesis.titleB} <em>{t.thesis.titleEm}</em>
           </h2>
-          <p>
-            DEBUY gives buyers the clarity to understand a supplier&apos;s
-            price, the confidence to challenge it, and the evidence to make
-            every next conversation stronger.
-          </p>
+          <p>{t.thesis.body}</p>
         </div>
       </div>
     </section>

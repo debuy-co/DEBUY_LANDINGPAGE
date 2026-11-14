@@ -1,8 +1,11 @@
 import Link from "next/link";
 import DraftHeader from "../components/landing/DraftHeader";
 import Footer from "../components/layout/Footer";
+import { useLang } from "../components/landing/i18n";
 
 export default function ProductPage({ product }) {
+  const { t } = useLang();
+
   return (
     <>
       <DraftHeader />
@@ -10,7 +13,7 @@ export default function ProductPage({ product }) {
       <section className="product-hero">
         <div className="container">
           <nav className="breadcrumb" aria-label="Breadcrumb">
-            <Link href="/">← Back to DEBUY</Link>
+            <Link href="/">{t.detail.back}</Link>
           </nav>
 
           <div className="product-hero-grid">
@@ -34,14 +37,14 @@ export default function ProductPage({ product }) {
 
       <section className="section detail-problem" id="problem">
         <div className="container">
-          <span className="eyebrow">The problem</span>
+          <span className="eyebrow">{t.detail.problem}</span>
           <h2 className="detail-problem__text">{product.problem}</h2>
         </div>
       </section>
 
       <section className="section section--alt" id="how">
         <div className="container">
-          <span className="eyebrow">How it works</span>
+          <span className="eyebrow">{t.detail.how}</span>
           <div className="implementation-grid">
             {product.steps.map((s, i) => (
               <div className="implementation-card" key={s.title}>
@@ -56,7 +59,7 @@ export default function ProductPage({ product }) {
 
       <section className="section" id="faq">
         <div className="container">
-          <span className="eyebrow">Objections, answered</span>
+          <span className="eyebrow">{t.detail.objections}</span>
           <div className="why-grid">
             {product.objections.map((o) => (
               <article className="why-card" key={o.q}>
@@ -73,12 +76,12 @@ export default function ProductPage({ product }) {
         <div className="container final-cta-content final-cta-content--center">
           <span className="eyebrow eyebrow--light">
             <span className="eyebrow-dot" aria-hidden="true" />
-            Start with your data
+            {t.detail.start}
           </span>
           <h2>{product.ctaLabel}</h2>
           <p>{product.ctaHint}</p>
           <a className="btn btn-primary" href="mailto:hello@debuy.co">
-            Get started &rarr;
+            {t.detail.getStarted} &rarr;
           </a>
         </div>
       </section>

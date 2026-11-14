@@ -1,8 +1,7 @@
 import ProductPage from "./ProductPage";
-import { PRODUCTS } from "../components/landing/productsData";
-
-const product = PRODUCTS[0];
+import { useProduct } from "../components/landing/productsData";
 
 export default function QuoteCheckPage() {
+  const product = useProduct(0);
   return <ProductPage product={product} />;
 }

@@ -773,6 +773,46 @@ $line: rgba(13, 110, 253, 0.16);
   border-radius: 4px;
 }
 
+/* ── Language switch (header, top right) ────── */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  span {
+    color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.lang-btn {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 0.2rem 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.lang-btn--active {
+  color: #fff;
+  border-color: $accent;
+  background: rgba(13, 110, 253, 0.18);
+}
+
 /* ── Shared bits ────────────────────────────── */
 .eyebrow--light {
   color: #6ea8fe;

@@ -1,8 +1,7 @@
 import ProductPage from "./ProductPage";
-import { PRODUCTS } from "../components/landing/productsData";
-
-const product = PRODUCTS[2];
+import { useProduct } from "../components/landing/productsData";
 
 export default function OrderWatchPage() {
+  const product = useProduct(2);
   return <ProductPage product={product} />;
 }

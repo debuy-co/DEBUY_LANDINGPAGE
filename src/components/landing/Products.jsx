@@ -1,60 +1,27 @@
 import Link from "next/link";
-
-const FEATURES = [
-  {
-    number: "01",
-    name: "RECOVERY SPEND",
-    title: "Find the value in your purchasing data.",
-    description:
-      "DEBUY analyzes the purchasing data you already have to surface supplier price movements and potential recovery opportunities. See what changed and understand the drivers — materials, FX, and volume.",
-    detail: "Get a defensible negotiation brief and ready-to-use talk track in days.",
-    icon: "✳",
-    href: "/platform",
-  },
-  {
-    number: "02",
-    name: "QUOTE CHECK",
-    title: "Know what to challenge.",
-    description:
-      "Forward a supplier quote as a PDF, spreadsheet, or email. DEBUY breaks down the price drivers — such as materials, FX, and volume — and prepares a clear negotiation brief with a ready-to-use talk track.",
-    detail: "Every assumption is visible and editable by your team.",
-    icon: "↗",
-    href: "/quote-check",
-  },
-  {
-    number: "03",
-    name: "ORDER WATCH",
-    title: "Make supplier performance count.",
-    description:
-      "CC watch@debuy.co on a purchase order. DEBUY follows confirmations, shipments, deliveries, and invoices, flags delays and discrepancies, and prepares follow-ups when needed.",
-    detail: "Turn what happens after the order into evidence for your next negotiation.",
-    icon: "◎",
-    href: "/order-watch",
-    emailChip: true,
-  },
-];
+import { useLang } from "./i18n";
 
 export default function Products() {
+  const { t } = useLang();
+  const cards = t.products.cards;
+
   return (
     <section className="products section" id="products">
       <div className="container">
         <div className="products-heading">
           <div>
-            <span className="eyebrow">The DEBUY platform</span>
+            <span className="eyebrow">{t.products.eyebrow}</span>
             <h2>
-              One negotiation cycle.
+              {t.products.titleA}
               <br />
-              Three ways to <em>build leverage.</em>
+              {t.products.titleB} <em>{t.products.titleEm}</em>
             </h2>
           </div>
-          <p>
-            Find opportunities in purchasing data. Prepare the negotiation.
-            Carry supplier performance into the next one.
-          </p>
+          <p>{t.products.intro}</p>
         </div>
 
         <div className="feature-grid grid grid-3">
-          {FEATURES.map((f) => (
+          {cards.map((f) => (
             <article className="feature-cardx" key={f.number}>
               <div className="feature-cardx__top">
                 <span>
@@ -76,7 +43,8 @@ export default function Products() {
                 </div>
               )}
               <Link className="feature-cardx__link" href={f.href}>
-                Explore {f.name.toLowerCase()} <span aria-hidden="true">↗</span>
+                {t.products.explore} {f.name.toLowerCase()}{" "}
+                <span aria-hidden="true">↗</span>
               </Link>
             </article>
           ))}

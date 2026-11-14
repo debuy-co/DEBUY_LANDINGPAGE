@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useLang } from "./i18n";
 
 export default function DraftHeader() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
+  const { lang, setLang, t } = useLang();
 
   const scrollToSection = (id) => {
     setOpen(false);
@@ -37,45 +39,61 @@ export default function DraftHeader() {
 
         <nav className="nav desktop-nav">
           <button className="nav-item" onClick={() => scrollToSection("products")}>
-            Platform
+            {t.nav.platform}
           </button>
           <button
             className="nav-item"
             onClick={() => scrollToSection("how-it-works")}
           >
-            How it works
+            {t.nav.how}
           </button>
           <Link href="/about" className="nav-item">
-            About
+            {t.nav.about}
           </Link>
         </nav>
 
-        <button
-          className="burger"
-          aria-label="Open menu"
-          aria-expanded={open}
-          onClick={() => setOpen(!open)}
-        >
-          ☰
-        </button>
+        <div className="header-right">
+          <div className="lang-switch" role="group" aria-label="Language / Lingua">
+            <button
+              className={lang === "en" ? "lang-btn lang-btn--active" : "lang-btn"}
+              onClick={() => setLang("en")}
+            >
+              EN
+            </button>
+            <span aria-hidden="true">/</span>
+            <button
+              className={lang === "it" ? "lang-btn lang-btn--active" : "lang-btn"}
+              onClick={() => setLang("it")}
+            >
+              IT
+            </button>
+          </div>
 
-        <a href="#contact" className="nav-cta">
-          Talk to us
-        </a>
+          <button
+            className="burger"
+            aria-label="Open menu"
+            aria-expanded={open}
+            onClick={() => setOpen(!open)}
+          >
+            ☰
+          </button>
+
+          <a href="#contact" className="nav-cta">
+            {t.nav.cta}
+          </a>
+        </div>
       </div>
 
       {open && (
         <div className="mobile-nav">
-          <button onClick={() => scrollToSection("products")}>Platform</button>
-          <button onClick={() => scrollToSection("how-it-works")}>
-            How it works
-          </button>
-          <Link href="/about" onClick={() => setOpen(false)}>About</Link>
+          <button onClick={() => scrollToSection("products")}>{t.nav.platform}</button>
+          <button onClick={() => scrollToSection("how-it-works")}>{t.nav.how}</button>
+          <Link href="/about" onClick={() => setOpen(false)}>{t.nav.about}</Link>
           <Link href="/quote-check" onClick={() => setOpen(false)}>
-            Quote Check
+            {t.nav.quoteCheck}
           </Link>
           <Link href="/order-watch" onClick={() => setOpen(false)}>
-            Order Watch
+            {t.nav.orderWatch}
           </Link>
         </div>
       )}
