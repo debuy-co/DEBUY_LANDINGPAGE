@@ -14,6 +14,10 @@ $line: rgba(13, 110, 253, 0.16);
     gap: 3rem;
     align-items: center;
   }
+
+  .hero-draft-grid--single {
+    grid-template-columns: minmax(0, 640px);
+  }
 }
 
 .hero-actions--stack {
@@ -1180,6 +1184,8 @@ $line: rgba(13, 110, 253, 0.16);
 }
 
 .final-cta-content--center {
+  position: relative;
+  z-index: 1;
   text-align: center;
   max-width: 640px;
   margin: 0 auto;
