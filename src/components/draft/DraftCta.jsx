@@ -1,5 +1,3 @@
-import EmailCapture from "./EmailCapture";
-
 export default function DraftCta() {
   return (
     <section className="final-cta section" id="contact">
@@ -7,25 +5,23 @@ export default function DraftCta() {
 
       <div className="container final-cta-grid">
         <div className="final-cta-content">
-          <h2>Forward an offer. Watch the verdict.</h2>
-          <p>
-            The fastest way to try DEBUY is also the product: send a supplier
-            offer and get a defensible verdict in minutes — before any
-            registration or data onboarding.
-          </p>
-          <ul className="final-cta-benefits">
-            <li>Verdict in minutes, not meetings</li>
-            <li>No integration required</li>
-            <li>Every assumption traceable</li>
-            <li>Free for your first quote</li>
-          </ul>
+          <span className="eyebrow eyebrow--light">
+            <span className="eyebrow-dot" aria-hidden="true" />
+            Your next negotiation starts here
+          </span>
+          <h2>
+            Make your next move <em>with confidence.</em>
+          </h2>
+          <p>Bring a supplier quote. Leave with a clearer negotiation position.</p>
         </div>
 
         <div className="final-cta-form">
-          <EmailCapture
-            placeholder="Work email"
-            buttonLabel="Check your first quote free"
-          />
+          <a
+            className="btn btn-primary btn-block"
+            href="mailto:hello@debuy.co?subject=See%20DEBUY%20in%20action"
+          >
+            Talk to DEBUY &rarr;
+          </a>
           <p className="form-note">
             By continuing you accept our{" "}
             <a href="/privacy" target="_blank" rel="noopener noreferrer">

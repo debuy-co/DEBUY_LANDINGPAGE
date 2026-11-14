@@ -37,19 +37,16 @@ export default function DraftHeader() {
 
         <nav className="nav desktop-nav">
           <button className="nav-item" onClick={() => scrollToSection("products")}>
-            Products
+            Platform
           </button>
           <button
             className="nav-item"
-            onClick={() => scrollToSection("implementation")}
+            onClick={() => scrollToSection("how-it-works")}
           >
             How it works
           </button>
-          <button className="nav-item" onClick={() => scrollToSection("why")}>
-            Why DEBUY
-          </button>
-          <button className="nav-item" onClick={() => scrollToSection("faq")}>
-            FAQ
+          <button className="nav-item" onClick={() => scrollToSection("about")}>
+            About
           </button>
         </nav>
 
@@ -63,18 +60,17 @@ export default function DraftHeader() {
         </button>
 
         <a href="#contact" className="nav-cta">
-          Check a quote free
+          Talk to us
         </a>
       </div>
 
       {open && (
         <div className="mobile-nav">
-          <button onClick={() => scrollToSection("products")}>Products</button>
-          <button onClick={() => scrollToSection("implementation")}>
+          <button onClick={() => scrollToSection("products")}>Platform</button>
+          <button onClick={() => scrollToSection("how-it-works")}>
             How it works
           </button>
-          <button onClick={() => scrollToSection("why")}>Why DEBUY</button>
-          <button onClick={() => scrollToSection("faq")}>FAQ</button>
+          <button onClick={() => scrollToSection("about")}>About</button>
           <Link href="/draft/quote-check" onClick={() => setOpen(false)}>
             Quote Check
           </Link>

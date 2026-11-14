@@ -5,10 +5,10 @@ export default function DraftHomePage() {
   return (
     <>
       <Head>
-        <title>DEBUY | Know what you should pay. Know where every order stands.</title>
+        <title>DEBUY | Make every supplier negotiation count.</title>
         <meta
           name="description"
-          content="DEBUY covers purchasing from the first quote to the final delivery: Quote Check gives a defensible verdict on every offer, Intelligence finds recoverable spend, Order Watch tracks every order."
+          content="DEBUY turns every supplier price movement into an explainable negotiation position — Recovery Spend, Quote Check and Order Watch — and every order outcome into leverage for the next negotiation."
         />
         <meta name="robots" content="noindex, nofollow" />
       </Head>

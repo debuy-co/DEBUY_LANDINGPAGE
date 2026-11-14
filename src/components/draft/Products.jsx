@@ -1,102 +1,85 @@
-import { useState } from "react";
 import Link from "next/link";
-import { PRODUCTS } from "./productsData";
-import EmailCapture from "./EmailCapture";
 
-export const BRAND_MESSAGE = "Know what you should pay. Know where every order stands.";
+const FEATURES = [
+  {
+    number: "01",
+    name: "RECOVERY SPEND",
+    title: "Find the value in your purchasing data.",
+    description:
+      "DEBUY analyzes the purchasing data you already have to surface supplier price movements and potential recovery opportunities. See what changed and understand the drivers — materials, FX, and volume.",
+    detail: "Get a defensible negotiation brief and ready-to-use talk track in days.",
+    icon: "✳",
+    href: "/draft/platform",
+  },
+  {
+    number: "02",
+    name: "QUOTE CHECK",
+    title: "Know what to challenge.",
+    description:
+      "Forward a supplier quote as a PDF, spreadsheet, or email. DEBUY breaks down the price drivers — such as materials, FX, and volume — and prepares a clear negotiation brief with a ready-to-use talk track.",
+    detail: "Every assumption is visible and editable by your team.",
+    icon: "↗",
+    href: "/draft/quote-check",
+  },
+  {
+    number: "03",
+    name: "ORDER WATCH",
+    title: "Make supplier performance count.",
+    description:
+      "CC watch@debuy.co on a purchase order. DEBUY follows confirmations, shipments, deliveries, and invoices, flags delays and discrepancies, and prepares follow-ups when needed.",
+    detail: "Turn what happens after the order into evidence for your next negotiation.",
+    icon: "◎",
+    href: "/draft/order-watch",
+    emailChip: true,
+  },
+];
 
 export default function Products() {
-  const [active, setActive] = useState(0);
-  const [animKey, setAnimKey] = useState(0);
-
-  const go = (idx) => {
-    if (idx === active) return;
-    setActive(idx);
-    setAnimKey((k) => k + 1);
-  };
-
-  const p = PRODUCTS[active];
-
   return (
     <section className="products section" id="products">
       <div className="container">
-        <div className="section-header">
-          <span className="eyebrow">Three products, one promise</span>
-          <h2>{BRAND_MESSAGE}</h2>
+        <div className="products-heading">
+          <div>
+            <span className="eyebrow">The DEBUY platform</span>
+            <h2>
+              One negotiation cycle.
+              <br />
+              Three ways to <em>build leverage.</em>
+            </h2>
+          </div>
           <p>
-            From the first quote to the final delivery. Select a product to see
-            exactly what you get.
+            Find opportunities in purchasing data. Prepare the negotiation.
+            Carry supplier performance into the next one.
           </p>
         </div>
 
-        <div className="explorer">
-          {/* RAIL — the other two products move aside here */}
-          <div className="explorer-rail" role="tablist" aria-label="DEBUY products">
-            {PRODUCTS.map((prod, i) => (
-              <button
-                key={prod.id}
-                role="tab"
-                aria-selected={i === active}
-                className={`explorer-tab${i === active ? " explorer-tab--active" : ""}`}
-                onClick={() => go(i)}
-              >
-                <span className="step-badge">{prod.num}</span>
-                <span className="explorer-tab__body">
-                  <strong>{prod.name}</strong>
-                  <em>{prod.claim}</em>
+        <div className="feature-grid grid grid-3">
+          {FEATURES.map((f) => (
+            <article className="feature-cardx" key={f.number}>
+              <div className="feature-cardx__top">
+                <span>
+                  {f.number} / {f.name}
                 </span>
-              </button>
-            ))}
-          </div>
-
-          {/* DETAIL — expands on the same page */}
-          <div className="explorer-detail" key={animKey} role="tabpanel">
-            <div className="explorer-detail__head">
-              <div className="explorer-detail__intro">
-                <h3>{p.name}</h3>
-                <p className="product-card__claim">{p.claim}</p>
-                <p>{p.desc}</p>
-                <EmailCapture compact buttonLabel={p.ctaLabel} />
-                <p className="hero-hint hero-hint--dark">{p.ctaHint}</p>
-                <Link href={p.href} className="explorer-detail__link">
-                  Open the full {p.name} page &rarr;
-                </Link>
+                <span className="feature-cardx__icon" aria-hidden="true">
+                  {f.icon}
+                </span>
               </div>
-              <div className="explorer-detail__visual">{p.visual}</div>
-            </div>
-
-            <div className="explorer-block">
-              <h4>The problem</h4>
-              <p>{p.problem}</p>
-            </div>
-
-            <div className="explorer-block">
-              <h4>How it works</h4>
-              <div className="implementation-grid implementation-grid--compact">
-                {p.steps.map((s, i) => (
-                  <div className="implementation-card" key={s.title}>
-                    <span className="step-badge">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3>{s.title}</h3>
-                    <p>{s.desc}</p>
-                  </div>
-                ))}
+              <h3>{f.title}</h3>
+              <p>{f.description}</p>
+              <div className="feature-cardx__detail">
+                <span aria-hidden="true">✳</span>
+                {f.detail}
               </div>
-            </div>
-
-            <div className="explorer-block">
-              <h4>Objections, answered</h4>
-              <div className="why-grid">
-                {p.objections.map((o) => (
-                  <article className="why-card" key={o.q}>
-                    <h3>{o.q}</h3>
-                    <p className="why-card__us">{o.a}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
+              {f.emailChip && (
+                <div className="email-chip">
+                  TO: supplier@company.com <span>CC: watch@debuy.co</span>
+                </div>
+              )}
+              <Link className="feature-cardx__link" href={f.href}>
+                Explore {f.name.toLowerCase()} <span aria-hidden="true">↗</span>
+              </Link>
+            </article>
+          ))}
         </div>
       </div>
     </section>
