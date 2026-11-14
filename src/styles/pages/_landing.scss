@@ -854,7 +854,7 @@ $line: rgba(13, 110, 253, 0.16);
   font-weight: 600;
 
   span {
-    color: rgba(255, 255, 255, 0.4);
+    color: #adb5bd;
   }
 }
 
@@ -865,18 +865,113 @@ $line: rgba(13, 110, 253, 0.16);
   padding: 0.2rem 0.45rem;
   font-size: 0.8rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.65);
+  color: #495057;
   cursor: pointer;
 
   &:hover {
-    color: #fff;
+    color: $accent;
   }
 }
 
 .lang-btn--active {
   color: #fff;
   border-color: $accent;
-  background: rgba(13, 110, 253, 0.18);
+  background: $accent;
+}
+
+/* ── Shared bits (restored from old landing) ── */
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $accent;
+  margin-bottom: 0.75rem;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 4rem;
+
+  h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #adb5bd;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+}
+
+.thesis .section-header p {
+  color: $muted;
+}
+
+/* ── How it works (richer cards) ────────────── */
+.implementation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.implementation-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid $line;
+  border-top: 3px solid $accent;
+  border-radius: 10px;
+  padding: 2rem 1.5rem 1.5rem;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(2, 6, 23, 0.14);
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin: 0.75rem 0 0.5rem;
+  }
+
+  p {
+    color: $muted;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+.step-badge {
+  position: static;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: $accent;
+  background: rgba(13, 110, 253, 0.12);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+.implementation-card .step-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 992px) {
+  .implementation-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ── Shared bits ────────────────────────────── */
