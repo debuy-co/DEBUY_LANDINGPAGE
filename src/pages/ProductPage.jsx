@@ -1,8 +1,8 @@
 import Link from "next/link";
-import DraftHeader from "../components/draft/DraftHeader";
+import DraftHeader from "../components/landing/DraftHeader";
 import Footer from "../components/layout/Footer";
 
-export default function DraftProductPage({ product }) {
+export default function ProductPage({ product }) {
   return (
     <>
       <DraftHeader />

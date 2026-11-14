@@ -1,7 +1,7 @@
 import Head from "next/head";
-import DraftOrderWatch from "../../src/pages/DraftOrderWatch";
+import OrderWatchPage from "../src/pages/OrderWatchPage";
 
-export default function DraftOrderWatchPage() {
+export default function OrderWatchPagePage() {
   return (
     <>
       <Head>
@@ -10,9 +10,8 @@ export default function DraftOrderWatchPage() {
           name="description"
           content="Order Watch tracks milestones, flags discrepancies and sends a weekly digest on every open order. CC the assistant on a PO thread — that's the whole setup."
         />
-        <meta name="robots" content="noindex, nofollow" />
       </Head>
-      <DraftOrderWatch />
+      <OrderWatchPage />
     </>
   );
 }

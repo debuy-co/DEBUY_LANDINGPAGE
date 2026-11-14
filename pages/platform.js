@@ -1,7 +1,7 @@
 import Head from "next/head";
-import DraftPlatform from "../../src/pages/DraftPlatform";
+import PlatformPage from "../src/pages/PlatformPage";
 
-export default function DraftPlatformPage() {
+export default function PlatformPagePage() {
   return (
     <>
       <Head>
@@ -10,9 +10,8 @@ export default function DraftPlatformPage() {
           name="description"
           content="Connect your purchasing data and DEBUY goes all the way down: from dashboards to cost drivers to a negotiation brief you can defend. Insights in days, not months."
         />
-        <meta name="robots" content="noindex, nofollow" />
       </Head>
-      <DraftPlatform />
+      <PlatformPage />
     </>
   );
 }
