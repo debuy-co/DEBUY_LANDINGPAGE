@@ -26,7 +26,13 @@ export default function DraftCta() {
           >
             {t.closing.cta} &rarr;
           </a>
-
+          <p className="form-note">
+            {t.closing.noteBefore}
+            <a href="/privacy" target="_blank" rel="noopener noreferrer">
+              {t.closing.noteLink}
+            </a>
+            {t.closing.noteAfter}
+          </p>
         </div>
       </div>
     </section>

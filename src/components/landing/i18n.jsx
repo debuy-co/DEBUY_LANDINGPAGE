@@ -96,6 +96,9 @@ export const STRINGS = {
       titleEm: "with confidence.",
       body: "Bring a supplier quote. Leave with a clearer negotiation position.",
       cta: "Talk to DEBUY",
+      noteBefore: "By continuing you accept our ",
+      noteLink: "Privacy Policy",
+      noteAfter: " (GDPR). Essential cookies only.",
     },
     detail: {
       back: "← Back to DEBUY",
@@ -262,6 +265,9 @@ export const STRINGS = {
       titleEm: "con fiducia.",
       body: "Porta un preventivo di un fornitore. Esci con una posizione di negoziazione più chiara.",
       cta: "Parla con DEBUY",
+      noteBefore: "Proseguendo accetti la nostra ",
+      noteLink: "Privacy Policy",
+      noteAfter: " (GDPR). Solo cookie essenziali.",
     },
     detail: {
       back: "← Torna a DEBUY",
