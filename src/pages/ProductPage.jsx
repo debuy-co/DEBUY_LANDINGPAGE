@@ -10,7 +10,7 @@ export default function ProductPage({ product }) {
       <section className="product-hero">
         <div className="container">
           <nav className="breadcrumb" aria-label="Breadcrumb">
-            <Link href="/draft">← Back to DEBUY</Link>
+            <Link href="/">← Back to DEBUY</Link>
           </nav>
 
           <div className="product-hero-grid">

@@ -9,7 +9,7 @@ const FEATURES = [
       "DEBUY analyzes the purchasing data you already have to surface supplier price movements and potential recovery opportunities. See what changed and understand the drivers — materials, FX, and volume.",
     detail: "Get a defensible negotiation brief and ready-to-use talk track in days.",
     icon: "✳",
-    href: "/draft/platform",
+    href: "/platform",
   },
   {
     number: "02",
@@ -19,7 +19,7 @@ const FEATURES = [
       "Forward a supplier quote as a PDF, spreadsheet, or email. DEBUY breaks down the price drivers — such as materials, FX, and volume — and prepares a clear negotiation brief with a ready-to-use talk track.",
     detail: "Every assumption is visible and editable by your team.",
     icon: "↗",
-    href: "/draft/quote-check",
+    href: "/quote-check",
   },
   {
     number: "03",
@@ -29,7 +29,7 @@ const FEATURES = [
       "CC watch@debuy.co on a purchase order. DEBUY follows confirmations, shipments, deliveries, and invoices, flags delays and discrepancies, and prepares follow-ups when needed.",
     detail: "Turn what happens after the order into evidence for your next negotiation.",
     icon: "◎",
-    href: "/draft/order-watch",
+    href: "/order-watch",
     emailChip: true,
   },
 ];

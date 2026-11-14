@@ -8,10 +8,10 @@ export default function DraftHeader() {
 
   const scrollToSection = (id) => {
     setOpen(false);
-    if (router.pathname === "/draft" || router.pathname === "/draft/") {
+    if (router.pathname === "/") {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     } else {
-      router.push("/draft", { state: { scrollTo: id } });
+      router.push("/", { state: { scrollTo: id } });
     }
   };
 
@@ -19,14 +19,14 @@ export default function DraftHeader() {
     <header className="header">
       <div className="container header-inner">
         <div className="brand">
-          <a href="/draft" className="logo">
+          <a href="/" className="logo">
             <img
               src="/images/base_icon_transparent_background.png"
               alt="DEBUY | Negotiation intelligence for European manufacturers"
               className="logo-img"
             />
           </a>
-          <a href="/draft" className="logo">
+          <a href="/" className="logo">
             <img
               src="/images/base_text-logoname_transparent_background.png"
               alt="DEBUY | Negotiation intelligence for European manufacturers"
@@ -71,10 +71,10 @@ export default function DraftHeader() {
             How it works
           </button>
           <Link href="/about" onClick={() => setOpen(false)}>About</Link>
-          <Link href="/draft/quote-check" onClick={() => setOpen(false)}>
+          <Link href="/quote-check" onClick={() => setOpen(false)}>
             Quote Check
           </Link>
-          <Link href="/draft/order-watch" onClick={() => setOpen(false)}>
+          <Link href="/order-watch" onClick={() => setOpen(false)}>
             Order Watch
           </Link>
         </div>
